@@ -1,5 +1,6 @@
 import time
 from selenium import webdriver
+from selenium.webdriver import ActionChains
 
 
 def open_browser(type_):
@@ -61,3 +62,6 @@ class SeleniumKey:
 
     def submit(self, name, value):
         self.locator(name, value).submit()
+
+    def right_click(self, name, value):
+        ActionChains(self).context_click(self.locator(name, value)).perform()
