@@ -65,3 +65,6 @@ class SeleniumKey:
 
     def right_click(self, name, value):
         ActionChains(self).context_click(self.locator(name, value)).perform()
+
+    def double_click(self, name, value):
+        ActionChains(self).double_click(self.locator(name, value)).perform()
