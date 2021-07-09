@@ -3,26 +3,40 @@ from selenium import webdriver
 from selenium.webdriver import ActionChains
 
 
-def open_browser(type_, headless=False):
+def open_browser(type_):
     try:
-        if headless is True:
-            chrome_less = webdriver.ChromeOptions()
-            chrome_less.add_argument('--headless')
-            chrome_less.add_argument('--disable-gpu')
-            driver = webdriver.Chrome(chrome_options=chrome_less)
-        else:
-            driver = getattr(webdriver, type_)()
+        driver = getattr(webdriver, type_)()
     except Exception as e:
         print(e)
         driver = webdriver.Chrome()
     return driver
 
 
+def open_headless_browser():
+    try:
+        chrome_less = webdriver.ChromeOptions()
+        chrome_less.add_argument('--headless')
+        chrome_less.add_argument('--disable-gpu')
+        driver = webdriver.Chrome(chrome_options=chrome_less)
+    except Exception as e:
+        print(e)
+        print('Opening Chrome browser')
+        driver = webdriver.Chrome()
+    return driver
+
+
 class SeleniumKey:
-    def __init__(self, type_=None):
+    def __init__(self, type_=None, headless=False):
+        if headless is True:
+            self.driver = open_headless_browser()
         self.driver = open_browser(type_)
 
     def open(self, txt):
+        """
+        Input URL and open website
+        :param txt: URL
+        :return: None
+        """
         self.driver.get(txt)
 
     def locator(self, name, value):

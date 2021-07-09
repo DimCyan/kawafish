@@ -14,6 +14,8 @@ def testcase_read(args):
             if isinstance(value[0], int):
                 if value[1] == 'open_browser':
                     sk = SeleniumKey(param['txt'])
+                elif value[1] == 'open_headless_browser':
+                    sk = SeleniumKey(param['txt'], headless=True)
                 else:
                     getattr(sk, value[1])(**param)
 
