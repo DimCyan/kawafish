@@ -57,6 +57,9 @@ class SeleniumKey:
     def sleep(self, txt):
         time.sleep(txt)
 
+    def wait(self, txt):
+        self.driver.implicitly_wait(txt)
+
     def assert_text(self, name, value, expect):
         try:
             reality = self.locator(name, value).text
