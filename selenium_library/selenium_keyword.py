@@ -91,3 +91,18 @@ class SeleniumKey:
 
     def double_click(self, name, value):
         ActionChains(self).double_click(self.locator(name, value)).perform()
+
+    def switch_window(self, txt):
+        self.driver.switch_to.window(txt)
+
+    def switch_frame(self, txt):
+        self.driver.switch_to.frame(txt)
+
+    def switch_parent_frame(self):
+        self.driver.switch_to.parent_frame()
+
+    def page_timeout(self, txt):
+        self.driver.set_page_load_timeout(txt)
+
+    def script_timeout(self, txt):
+        self.driver.set_script_timeout(txt)
