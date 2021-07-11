@@ -74,10 +74,10 @@ class SeleniumKey:
     def min_window(self):
         self.driver.minimize_window()
 
-    def forword(self):
+    def forward(self):
         self.driver.forward()
 
-    def backword(self):
+    def backward(self):
         self.driver.back()
 
     def clear(self, name, value):
