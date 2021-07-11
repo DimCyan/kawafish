@@ -35,7 +35,6 @@ class SeleniumKey:
         """
         Input URL and open website
         :param txt: URL
-        :return: None
         """
         self.driver.get(txt)
 
@@ -67,6 +66,9 @@ class SeleniumKey:
             return True
         except BaseException:
             return False
+
+    def refresh(self):
+        self.driver.refresh()
 
     def max_window(self):
         self.driver.maximize_window()
@@ -100,6 +102,15 @@ class SeleniumKey:
 
     def switch_parent_frame(self):
         self.driver.switch_to.parent_frame()
+
+    def accept_alert(self):
+        self.driver.switch_to.alert.accept()
+
+    def dismiss_alert(self):
+        self.driver.switch_to.alert.dismiss()
+
+    def input_alert(self, txt):
+        self.driver.switch_to.alert.send_keys(txt)
 
     def page_timeout(self, txt):
         self.driver.set_page_load_timeout(txt)
