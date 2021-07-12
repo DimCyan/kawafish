@@ -12,7 +12,9 @@ def testcase_read(args):
                 if param[key] is None or param[key] == '':
                     del param[key]
             if isinstance(value[0], int):
-                if value[1] == 'open_browser':
+                if '#' in value[1]:
+                    pass
+                elif value[1] == 'open_browser':
                     sk = SeleniumKey(param['txt'])
                 elif value[1] == 'open_headless_browser':
                     sk = SeleniumKey(param['txt'], headless=True)
