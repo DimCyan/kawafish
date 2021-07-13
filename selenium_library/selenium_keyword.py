@@ -76,6 +76,9 @@ class SeleniumKey:
     def min_window(self):
         self.driver.minimize_window()
 
+    def full_screen(self):
+        self.driver.fullscreen_window()
+
     def forward(self):
         self.driver.forward()
 
