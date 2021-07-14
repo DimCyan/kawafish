@@ -67,6 +67,9 @@ class SeleniumKey:
         except BaseException:
             return False
 
+    def run_js_script(self):
+        pass
+
     def refresh(self):
         self.driver.refresh()
 
@@ -78,6 +81,15 @@ class SeleniumKey:
 
     def full_screen(self):
         self.driver.fullscreen_window()
+
+    def set_window_size(self, width, height):
+        self.driver.set_window_size(width, height)
+
+    def set_window_position(self):
+        pass
+
+    def set_window_rect(self):
+        pass
 
     def forward(self):
         self.driver.forward()
@@ -96,6 +108,18 @@ class SeleniumKey:
 
     def double_click(self, name, value):
         ActionChains(self).double_click(self.locator(name, value)).perform()
+
+    def scroll_top(self):
+        pass
+
+    def scroll_bottom(self):
+        pass
+
+    def scroll_up(self):
+        pass
+
+    def scroll_down(self):
+        pass
 
     def switch_window(self, txt):
         self.driver.switch_to.window(txt)
