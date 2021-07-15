@@ -85,11 +85,8 @@ class SeleniumKey:
     def set_window_size(self, width, height):
         self.driver.set_window_size(width, height)
 
-    def set_window_position(self):
-        pass
-
-    def set_window_rect(self):
-        pass
+    def set_window_position(self, x, y):
+        self.driver.set_window_position(x, y)
 
     def forward(self):
         self.driver.forward()
