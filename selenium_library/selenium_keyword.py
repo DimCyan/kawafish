@@ -67,8 +67,8 @@ class SeleniumKey:
         except BaseException:
             return False
 
-    def run_js_script(self):
-        pass
+    def run_js_script(self, txt):
+        self.driver.execute_script(txt)
 
     def refresh(self):
         self.driver.refresh()

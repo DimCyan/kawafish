@@ -3,6 +3,7 @@ from selenium_library.selenium_keyword import SeleniumKey
 
 
 def testcase_read(args):
+    global sk
     excel = openpyxl.load_workbook(args.path.name)
     for sheets in excel.sheetnames:
         sheet = excel[sheets]
@@ -20,6 +21,8 @@ def testcase_read(args):
                     sk = SeleniumKey(param['txt'], headless=True)
                 else:
                     getattr(sk, value[1])(**param)
+            else:
+                return ValueError('StepNo. must be int')
 
 
 if __name__ == '__main__':
