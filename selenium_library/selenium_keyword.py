@@ -107,10 +107,11 @@ class SeleniumKey:
         ActionChains(self).double_click(self.locator(name, value)).perform()
 
     def scroll_top(self):
-        pass
+        js = "var q=document.documentElement.scrollTop=0"
+        self.run_js_script(js)
 
     def scroll_bottom(self):
-        js="var q=document.documentElement.scrollTop=100000"
+        js = "var q=document.documentElement.scrollTop=100000"
         self.run_js_script(js)
 
     def scroll_up(self):
