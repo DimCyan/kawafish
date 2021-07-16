@@ -141,3 +141,6 @@ class SeleniumKey:
 
     def script_timeout(self, txt):
         self.driver.set_script_timeout(txt)
+
+    def screenshot(self):
+        pass
