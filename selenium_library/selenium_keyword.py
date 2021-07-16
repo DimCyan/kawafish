@@ -110,7 +110,8 @@ class SeleniumKey:
         pass
 
     def scroll_bottom(self):
-        pass
+        js="var q=document.documentElement.scrollTop=100000"
+        self.run_js_script(js)
 
     def scroll_up(self):
         pass
