@@ -1,0 +1,5 @@
+platformName: 'Android'
+platformVersion: '10'
+deviceName: '68c3200b'
+appPackage: 'com.android.settings'
+appActivity: 'com.android.settings.MainSettings'
