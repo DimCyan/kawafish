@@ -14,15 +14,13 @@ def testcase_read(args):
                     del param[key]
             if isinstance(value[0], int):
                 if '#' in value[1]:
-                    pass
+                    continue
                 elif value[1] == 'open_browser':
                     sk = SeleniumKey(param['txt'])
                 elif value[1] == 'open_headless_browser':
                     sk = SeleniumKey(param['txt'], headless=True)
                 else:
                     getattr(sk, value[1])(**param)
-            else:
-                return ValueError('StepNo. must be int')
 
 
 if __name__ == '__main__':
