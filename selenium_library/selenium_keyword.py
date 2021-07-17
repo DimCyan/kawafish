@@ -114,11 +114,9 @@ class SeleniumKey:
         js = "var q=document.documentElement.scrollTop=100000"
         self.run_js_script(js)
 
-    def scroll_up(self):
-        pass
-
-    def scroll_down(self):
-        pass
+    def scroll_to(self, x, y):
+        js = "window.scrollTo({},{})".format(x, y)
+        self.run_js_script(js)
 
     def switch_window(self, txt):
         self.driver.switch_to.window(txt)
