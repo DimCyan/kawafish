@@ -59,12 +59,20 @@ class SeleniumKey:
     def wait(self, txt):
         self.driver.implicitly_wait(txt)
 
-    def assert_text(self, name, value, expect):
+    def assert_text(self, name, value, expect: str):
         try:
             reality = self.locator(name, value).text
             assert reality == expect
             return True
-        except BaseException:
+        except AssertionError:
+            return False
+
+    def assert_exit(self, name, value, expect: bool):
+        try:
+            reality = self.locator(name, value)
+            assert reality == expect
+            return True
+        except AssertionError:
             return False
 
     def run_js_script(self, txt):
