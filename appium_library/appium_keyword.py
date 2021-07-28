@@ -21,3 +21,6 @@ class AppiumKey:
 
     def quit(self):
         self.driver.quit()
+
+    def wait(self, txt):
+        self.driver.implicitly_wait(txt)
