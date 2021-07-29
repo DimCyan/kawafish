@@ -24,3 +24,6 @@ class AppiumKey:
 
     def wait(self, txt):
         self.driver.implicitly_wait(txt)
+
+    def shake(self):
+        self.driver.shake()
