@@ -27,3 +27,9 @@ class AppiumKey:
 
     def shake(self):
         self.driver.shake()
+
+    def close(self):
+        self.driver.close()
+
+    def close_app(self):
+        self.driver.close_app()
