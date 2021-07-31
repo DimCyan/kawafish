@@ -33,3 +33,6 @@ class AppiumKey:
 
     def close_app(self):
         self.driver.close_app()
+
+    def swipe(self, x1, y1, x2, y2):
+        self.driver.swipe(x1, y1, x2, y2)
