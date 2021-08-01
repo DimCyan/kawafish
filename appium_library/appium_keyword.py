@@ -36,3 +36,6 @@ class AppiumKey:
 
     def swipe(self, x1, y1, x2, y2):
         self.driver.swipe(x1, y1, x2, y2)
+
+    def home(self):
+        self.driver.keyevent(3)
