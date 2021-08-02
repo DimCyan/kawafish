@@ -39,3 +39,12 @@ class AppiumKey:
 
     def home(self):
         self.driver.keyevent(3)
+
+    def back(self):
+        self.driver.keyevent(4)
+
+    def lock(self):
+        self.driver.keyevent(26)
+
+    def unlock(self):
+        self.lock()
