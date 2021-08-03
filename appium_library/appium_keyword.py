@@ -48,3 +48,9 @@ class AppiumKey:
 
     def unlock(self):
         self.lock()
+
+    def volume_up(self):
+        self.driver.keyevent(24)
+
+    def volume_down(self):
+        self.driver.keyevent(25)
