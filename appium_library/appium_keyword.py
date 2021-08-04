@@ -54,3 +54,6 @@ class AppiumKey:
 
     def volume_down(self):
         self.driver.keyevent(25)
+
+    def reset(self):
+        self.driver.reset()
