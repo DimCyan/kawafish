@@ -57,3 +57,6 @@ class AppiumKey:
 
     def reset(self):
         self.driver.reset()
+
+    def close_app(self):
+        self.driver.close_app()
